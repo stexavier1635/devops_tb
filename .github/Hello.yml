@@ -1,29 +1,185 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraíso na Praia</title>
 
-name: Primeiro CI
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f8ff;
+            color: #333;
+        }
 
+        header {
+            background-color: #0099cc;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
 
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
 
-jobs:
-  validacao:
-    # Maquina Virtual
-    runs-on: ubuntu-latest
+        nav {
+            background-color: #0077a3;
+            text-align: center;
+            padding: 15px;
+        }
 
-    # tarefas para essa tarefa 
-    steps:
-      - name: Fazendo o gitclone
-         uses: actions/checkout@v4
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
 
-    
-      - name: Listando o diretorio
-        run: ls -l
-        
-        - name: Deixando uma mensagem
-           run: echo "Esta funcionando o CI"
-      
+        nav a:hover {
+            color: #ffe066;
+        }
+
+        .banner {
+            height: 400px;
+            background: linear-gradient(
+                rgba(0, 150, 200, 0.25),
+                rgba(0, 100, 150, 0.35)
+            ),
+            url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+            center/cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .banner h2 {
+            font-size: 50px;
+            text-shadow: 2px 2px 5px #333;
+        }
+
+        .conteudo {
+            padding: 40px 10%;
+            text-align: center;
+        }
+
+        .conteudo h2 {
+            color: #0077a3;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .conteudo p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #0099cc;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #006080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌴 Paraíso na Praia 🌊</h1>
+        <p>Sol, mar e momentos inesquecíveis</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#lugares">Lugares</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section class="banner" id="inicio">
+        <h2>Viva o melhor da praia!</h2>
+    </section>
+
+    <section class="conteudo" id="sobre">
+        <h2>Bem-vindo ao Paraíso</h2>
+
+        <p>
+            Descubra praias incríveis, águas cristalinas, areia dourada
+            e paisagens perfeitas para relaxar e aproveitar momentos
+            especiais.
+        </p>
+
+        <div class="cards" id="lugares">
+
+            <div class="card">
+                <h3>🏖️ Praia</h3>
+                <p>
+                    Aproveite o sol, o mar e a tranquilidade de uma
+                    praia paradisíaca.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌅 Pôr do Sol</h3>
+                <p>
+                    Contemple um lindo pôr do sol à beira-mar e registre
+                    momentos inesquecíveis.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌴 Natureza</h3>
+                <p>
+                    Explore paisagens naturais e descubra lugares
+                    incríveis para descansar.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contato">
+        <p>© 2026 Paraíso na Praia | Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>
+
